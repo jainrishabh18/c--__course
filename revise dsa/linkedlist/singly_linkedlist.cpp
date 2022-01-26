@@ -43,6 +43,22 @@ class List{
 
             }
         }
+        void addFirst(int value)
+        {
+            Node *toadd = new Node(value);
+            if (head == NULL)
+            {
+                head = toadd;
+            }
+            else
+            { //here temp is pointing at head
+                //then we put the value we want to addfirst in head using head=toadd
+                //then after we added we again iterate the list by head->next=temp
+                Node *temp = head;
+                head = toadd;
+                head->next = temp;
+            }
+        }
 
         void printList(){
             Node *temp=head;
@@ -52,7 +68,49 @@ class List{
             }
             cout << endl;
         }
+        int listLength()
+        {
+            int length = 0;
+            if (head == NULL)
+            {
+                length = 0;
+            }
+            else
+            {
+                Node *temp = head;
+                while (temp != NULL)
+                {
+                    length++;
+                    temp = temp->next;
+                }
+            }
+            return length;
+        }
+        bool detectLoop(Node *head)
+        {
+            if (head == NULL || head->next == NULL)
+            {
+                return false;
+            }
+            else
+            {
+                Node *slow = head;
+                Node *fast = head;
+                while (fast->next && fast->next->next != NULL)
+                {
+                    slow = slow->next;
+                    fast = fast->next->next;
+                    if (slow == fast)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+
+            } // your code here
+        }
 };
+
 
 int main(){
     
