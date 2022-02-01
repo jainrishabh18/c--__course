@@ -69,7 +69,7 @@ bool subArrayExists(int arr[], int n)
             s.insert(pre_sum);
         }
         return false;
-        332
+        
     }
 
 
@@ -127,7 +127,7 @@ int lenOfLongSubarr(int A[],  int N, int K)
     //aur last res me jo value save he uske sath max function chalayenga
     // i.e --> res=max(res,i-mp[curr_sum-K])
             if(mp.find(curr_sum-K) !=mp.end())
-                res=max(res,i-mp[curr_sum-K]);
+                res= max(res,i-mp[curr_sum-K]);
 
         }return res;
     }
