@@ -5,7 +5,10 @@ int binary_search(int arr[], int size, int key)
 {
     int start = 0;
     int end = size -1;
-    int mid = (start + end)/2;
+    int mid = start + (end-start)/2;
+    // instead of this " int mid = (start + end)/2; "  we did " mid= start + (end-start)/2 " to handle the case when 
+    //  value inputed exceds int_max i.e (2 power 31) -1 so start + (end-start)/2 will handle it
+    
 
     while(start<= end)
     {
@@ -23,7 +26,7 @@ int binary_search(int arr[], int size, int key)
         {
             end = mid -1;
         }
-        mid = (start + end)/2;
+        mid = start + (end-start)/2;
 
     }
     return -1;
