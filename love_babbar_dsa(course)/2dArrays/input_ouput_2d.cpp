@@ -33,8 +33,12 @@ int main()
 // 3 8 13 18
 // 4 9 14 19
 // 5 10 15 20
+
+// colum wise print karna hai toh row har iteration pe change honi chaiye that is second for loop row ka hona chaiye and 
+// first vala col ka
         // for(int col=0; col<4; col++)
         // {
+           
         //     for(int row=0; row<5; row++)
         //     {
         //         cin >> arr[row][col];
@@ -51,18 +55,29 @@ int main()
         //     cout<< endl;
         // }
 
-// rowwise input below code
-
-        for(int row=0; row<5; row++)
+        // wave pattern input
+        for(int col=0; col<4; col++)
         {
-            for(int col=0; col<4; col++)
+            if(col % 2 == 0)
             {
-                cin >> arr[row][col];
+                for(int row=0; row<5; row++)
+                {
+                    cin >> arr[row][col];
+                }
             }
+            else
+            {
+                for(int row=5-1; row>=0; row--)
+                {
+                    cin >> arr[row][col];
+                }
+            }
+            
             // cout<< endl;
         }
-// printing output it will have the same code every time  first for loop will be row and second column
-//  just change the row and coulumn count acc to question demand
+        
+
+    // wave pattern print
         for(int row=0; row<5; row++)
         {
             for(int col=0; col<4; col++)
@@ -71,6 +86,29 @@ int main()
             }
             cout<< endl;
         }
+
+// {
+// rowwise input below code
+
+        // for(int row=0; row<5; row++)
+        // {
+        //     for(int col=0; col<4; col++)
+        //     {
+        //         cin >> arr[row][col];
+        //     }
+        //     // cout<< endl;
+        // }
+// printing output it will have the same code every time  first for loop will be row and second column
+//  just change the row and coulumn count acc to question demand
+        // for(int row=0; row<5; row++)
+        // {
+        //     for(int col=0; col<4; col++)
+        //     {
+        //         cout << arr[row][col]<< " ";
+        //     }
+        //     cout<< endl;
+        // }
+// }
     return 0;
 
 }
