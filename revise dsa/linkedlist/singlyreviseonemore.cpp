@@ -28,9 +28,9 @@ class List
                 Node *temp=head;
                 while(temp->next != NULL)
                 {
-                    temp=temp->next;
+                    temp = temp->next;
                 }
-                temp->next=toadd;
+                temp->next = toadd;
             }
         }
         void addFirst(int value){
@@ -58,6 +58,8 @@ class List
         }
 
         int listLength(){
+
+            
             int length=0;
             if(head==NULL){
                 length=0;
@@ -90,6 +92,7 @@ class List
         }
 
         void lastAtFirst()
+
         {
             Node *prev=NULL;
             Node *curr=head;
@@ -120,7 +123,9 @@ class List
             head = prevptr;
         }
 
-        void addOneToList(){
+        void addOneToList()
+        {
+            
             Node *prevptr1=NULL;
             Node *currptr1=head;
             Node *nextptr1=NULL;
@@ -298,13 +303,13 @@ int main()
     //
     List ri;
     
-    // for (int i = 1; i <= 10; i++)
-    // {
-    //     ri.addLast(i);
-    //     // ri.addLastatFirst();
-    // }
-    // ri.lastAtFirst();
-    // ri.printList();
+    for (int i = 1; i <= 5; i++)
+    {
+        ri.addLast(i);
+        // ri.addLastatFirst();
+    }
+    ri.lastAtFirst();
+    ri.printList();
 
     //for (int i = 1; i <= 10; i++)
     //{
@@ -320,14 +325,14 @@ int main()
     //     ri.addLast(i);
     //     // ri.addLastatFirst();
     // }
-    ri.addLast(1);
-    ri.addLast(2);
-    ri.addLast(3);
-    ri.addLast(4);
-    ri.addLast(6);
+    // ri.addLast(1);
+    // ri.addLast(2);
+    // ri.addLast(3);
+    // ri.addLast(4);
+    // ri.addLast(6);
     //ri.addOneToList();
     // ri.segregateevenodd();
-    cout << ri.listToInteger() << endl;
+    // cout << ri.listToInteger() << endl;
     // ri.printList();
 
     //cout << "Last 2nd value is : " << ri.getNthFromLast(2) << endl;

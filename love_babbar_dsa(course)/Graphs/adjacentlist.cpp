@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     // sc (n+2e)
-    //  e is edge  , n is node , m 
+    //  e is edge  , n is node ,
     int n,m;
     cin >> n >> m;
     

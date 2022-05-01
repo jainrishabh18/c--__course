@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool checkCycle(int sNode ,vector<int>&vis,vector<int>adj[])
+bool checkCycleBFS(int Snode ,vector<int>&vis,vector<int>adj[])
 {
     // for understanding how it is detecting cycle in graph refer to copy
 
@@ -11,40 +11,42 @@ bool checkCycle(int sNode ,vector<int>&vis,vector<int>adj[])
 
 
     queue<pair<int,int>>q;
-    vis[sNode]=1;
-    q.push({sNode,-1});
+    q.push({Snode,-1});
+    vis[Snode]=1;
     while(!q.empty())
     {
         int node = q.front().first;
         int par = q.front().second;
         q.pop();
-        // q.push({node,par});
-        // vis[i]=1;
+        // q.push()
         for(auto it: adj[node])
-        {    
+        {
             if(!vis[it])
             {
-                q.push({node,it});
-                vis[it]=true;    
+                vis[it]=true;
+                q.push({it,node});  
+                
             }
             else if(it != par)
             {
                 return true;
             }
-        }
+            
+        }  
     }
 }
 
 bool isCycle(int V,vector<int>adj[])
 {
     vector<int>vis(V+1,0);
-    for(int i=1;i<=V;i++)
-    {
-        if(!vis[i])
+        
+        for(int i=0; i<V; i++)
         {
-            if(checkCycle(i,vis,adj))
-                return true;
+            if(!vis[i])
+            {
+                if(checkCycleBFS(i,vis,adj))
+                    return true;
+            }
         }
-    }
-    return false;
+        return false;
 }
